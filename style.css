@@ -1,0 +1,79 @@
+.macos-window-control {
+    user-select: none;
+    -webkit-app-region: drag;
+    cursor: default;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    min-height: 22px;
+    min-width: 60px;
+    width: fit-content;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+a.macos-control-btn {
+    /*display: none;*/
+    user-select: none;
+    -webkit-app-region: no-drag;
+    cursor: default;
+    box-sizing: border-box;
+    width: 12px;
+    height: 12px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 50%;
+    margin-top: 1px;
+    margin-left: 4px;
+    margin-right: 4px;
+    line-height: 0;
+    background-color: rgb(221, 221, 221);
+    border-color: rgb(208, 208, 208);
+}
+
+a.macos-close-btn.macos-control-btn.macos-close-btn-focused {
+    background-color: #ff5f57;
+    border-color: #e2463f;
+}
+
+a.macos-minimize-btn.macos-control-btn.macos-minimize-btn-focused {
+    background-color:  #ffbd2e;
+    border-color: #e1a116;
+}
+
+a.macos-fullscreen-btn.macos-control-btn.macos-fullscreen-btn-focused {
+    background-color: #28c940;
+    border-color: #12ac28;
+}
+
+a.macos-close-btn.macos-control-btn.macos-close-btn-focused:active {
+    background-color: #bf4943;
+    border-color: #ad3934;
+}
+
+a.macos-minimize-btn.macos-control-btn.macos-minimize-btn-focused:active {
+    background-color:  #bf9123;
+    border-color: #ad7d15;
+}
+
+a.macos-fullscreen-btn.macos-control-btn.macos-fullscreen-btn-focused:active {
+    background-color: #1f9a31;
+    border-color: #128622;
+}
+
+
+.macos-btn-icon {
+    display: none;
+    width: 10px;
+    height: 10px;
+}
+
+.macos-window-control:hover .macos-btn-icon {
+    display: inline;
+}
+.macos-window-control:hover .macos-control-btn {
+    display: inline;
+}
