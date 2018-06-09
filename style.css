@@ -14,6 +14,7 @@
     border-top-right-radius: 5px;
     padding-left: 3px;
     padding-right: 3px;
+    position: fixed;
 }
 
 .electron-macos-title-bar-focused {
@@ -35,6 +36,7 @@
     width: fit-content;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    position: fixed;
 }
 
 a.macos-control-btn {
@@ -93,6 +95,9 @@ a.macos-fullscreen-btn.macos-control-btn.macos-fullscreen-btn-focused:active {
     height: 10px;
 }
 
+.show-on-hover {
+  display: none;
+}
 .macos-window-control:hover .macos-btn-icon {
     display: inline;
 }

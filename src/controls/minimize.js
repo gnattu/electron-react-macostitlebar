@@ -1,14 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export const Minimize = ({ currentWindow, isFocused, disabled }) => {
+export const Minimize = ({ currentWindow, isFocused, disabled, showOnHover }) => {
   const classOnFocus = isFocused ? 'macos-minimize-btn-focused' : ''
+  const classOnHover = showOnHover? 'show-on-hover' : ''
   if (disabled) {
     return (
-      <a className = "macos-control-btn"></a>)
+      <a className = {`${classOnHover} macos-control-btn`}></a>
+    )
   } else {
     return (
-      <a className = {`${classOnFocus} macos-minimize-btn macos-control-btn`} onClick={() => currentWindow.minimize()}>
+      <a className = {`${classOnHover} ${classOnFocus} macos-minimize-btn macos-control-btn`} onClick={() => currentWindow.minimize()}>
         {window.devicePixelRatio > 1.5 ? (
           <svg x="0px" y="0px" width="10px" height="10px" viewBox="0 0 20 20" className = "macos-btn-icon">
             <rect fill="#995700" x="2.4" y="9" width="15.1" height="2"/>
@@ -25,5 +27,6 @@ export const Minimize = ({ currentWindow, isFocused, disabled }) => {
 Minimize.propTyes = {
   currentWindow: PropTypes.object.isRequired,
   isFocused: PropTypes.bool,
+  showOnHover: PropTypes.bool,
   disabled: PropTypes.bool,
 }

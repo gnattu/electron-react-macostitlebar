@@ -31,6 +31,7 @@ export class Fullscreen extends Component {
   static propTyes = {
     currentWindow: PropTypes.object.isRequired,
     isFocused: PropTypes.bool,
+    showOnHover: PropTypes.bool,
     disabled: PropTypes.bool,
   }
   componentDidMount() {
@@ -44,10 +45,11 @@ export class Fullscreen extends Component {
   handleKeyup = e => {this.state.altKey && this.setState({ altKey: false })}
 
   render() {
-    const { currentWindow, disabled, isFocused } = this.props
+    const { currentWindow, disabled, isFocused, showOnHover } = this.props
     const { altKey } = this.state || false
     const allowFullscreen = currentWindow.isFullScreenable()
     const classOnFocus = isFocused ? 'macos-fullscreen-btn-focused' : ''
+    const classOnHover = showOnHover ? 'show-on-hover' : ''
     let icon
     let onClick
     if (process.platform === 'darwin' && allowFullscreen && !altKey) {
@@ -59,11 +61,11 @@ export class Fullscreen extends Component {
     }
     if (disabled) {
       return (
-        <a className = "macos-control-btn"></a>
+        <a className = {`${classOnHover} macos-control-btn`}></a>
       )
     } else {
       return (
-        <a className = {`${classOnFocus} macos-fullscreen-btn macos-control-btn`} onClick={onClick}>{icon}</a>
+        <a className = {`${classOnHover} ${classOnFocus} macos-fullscreen-btn macos-control-btn`} onClick={onClick}>{icon}</a>
       )
     }
   }

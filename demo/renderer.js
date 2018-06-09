@@ -2,4 +2,10 @@ const React = require('react')
 const ReactDOM = require('react-dom')
 
 const { macOSTitleBar } = require('..')
-ReactDOM.render(React.createElement(macOSTitleBar), document.querySelector('.title'))
+const titleBarArgs = {
+  disableFullscreen: false,
+  disableMinimize: true,
+  controlOnly: true,
+  showOnHover: true,
+}
+ReactDOM.render(React.createElement(macOSTitleBar, titleBarArgs), document.querySelector('.title'))

@@ -1,10 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export const Close = ({ currentWindow, isFocused }) => {
+export const Close = ({ currentWindow, isFocused, showOnHover }) => {
   const classOnFocus = isFocused ? 'macos-close-btn-focused' : ''
+  const classOnHover = showOnHover ? 'show-on-hover' : ''
   return (
-    <a className = {`${classOnFocus} macos-close-btn macos-control-btn`} onClick={() => currentWindow.close()}>
+    <a className = {`${classOnHover} ${classOnFocus} macos-close-btn macos-control-btn`} onClick={() => currentWindow.close()}>
       {window.devicePixelRatio > 1.5 ? (
         <svg x="0px" y="0px" width="10px" height="10px" viewBox="0 0 20 20" className = "macos-btn-icon">
           <polygon fill="#4d0000" points="15.9,5.2 14.8,4.1 10,8.9 5.2,4.1 4.1,5.2 8.9,10 4.1,14.8 5.2,15.9 10,11.1 14.8,15.9 15.9,14.8 11.1,10 "/>
@@ -20,4 +21,5 @@ export const Close = ({ currentWindow, isFocused }) => {
 Close.propTypes = {
   currentWindow: PropTypes.object.isRequired,
   isFocused: PropTypes.bool,
+  showOnHover: PropTypes.bool,
 }
