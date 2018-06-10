@@ -3,8 +3,9 @@ import PropTypes from 'prop-types'
 import { remote } from 'electron'
 
 import { Controls } from './controls/'
+import { TitleBar } from './titlebar/'
 
-class macOSTitleBar extends Component {
+class MacOSTitleBar extends Component {
   static propTypes = {
     showOnHover: PropTypes.bool,
     controlOnly: PropTypes.bool,
@@ -31,20 +32,22 @@ class macOSTitleBar extends Component {
   render() {
     const { disableFullscreen, disableMinimize, currentWindow, controlOnly, showOnHover } = this.props
     const { isFullscreen, isFocused } = this.state
-    const classOnFocus = isFocused ? 'electron-macos-title-bar-focused' : ''
     if (controlOnly) {
       return (
-        <Controls disableFullscreen={disableFullscreen} disableMinimize={disableMinimize} currentWindow={currentWindow} isFullscreen={isFullscreen} isFocused={isFocused} showOnHover={showOnHover}style={{paddingLeft: 3, paddingRight: 3}}></Controls>
+        <div className="electron-macos-title-bar">
+          <Controls disableFullscreen={disableFullscreen} disableMinimize={disableMinimize} currentWindow={currentWindow} isFullscreen={isFullscreen} isFocused={isFocused} showOnHover={showOnHover}></Controls>
+        </div>
       )
     } else {
       return (
         !isFullscreen &&
-          <div className={`${classOnFocus} electron-macos-title-bar`}>
-            <Controls disableFullscreen={disableFullscreen} disableMinimize={disableMinimize} currentWindow={currentWindow} isFullscreen={isFullscreen} isFocused={isFocused}></Controls>
-          </div>
+        <div className="electron-macos-title-bar">
+          <TitleBar currentWindow={currentWindow} isFocused={isFocused} showOnHover={showOnHover}></TitleBar>
+          <Controls disableFullscreen={disableFullscreen} disableMinimize={disableMinimize} currentWindow={currentWindow} isFullscreen={isFullscreen} isFocused={isFocused} showOnHover={showOnHover}></Controls>
+        </div>
       )
     }
   }
 }
 
-export { macOSTitleBar }
+export { MacOSTitleBar }

@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "babel src --out-dir lib",
-    "test": "electron demo",
-    "demo": "/Users/gnattu/src/prs/electron/out/D/Electron.app/Contents/MacOS/Electron demo"
+    "test": "electron demo"
   },
   "keywords": [
     "electron",
