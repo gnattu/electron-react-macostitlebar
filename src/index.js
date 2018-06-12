@@ -38,13 +38,13 @@ class MacOSTitleBar extends Component {
     const { isFullscreen, isFocused } = this.state
     if (controlOnly) {
       return (
-        <div className="electron-macos-title-bar">
+        <div id="electron-macos-title-bar">
           <Controls disableFullscreen={disableFullscreen} disableMinimize={disableMinimize} currentWindow={currentWindow} isFullscreen={isFullscreen} isFocused={isFocused} showOnHover={showOnHover}></Controls>
         </div>
       )
     } else if (toolBarComponent){
       return (
-        <div className="electron-macos-title-bar">
+        <div id="electron-macos-title-bar">
           {toolBarInset ? (
             <ToolBar toolBarProps={toolBarProps} isFocused={isFocused}>
               <Controls disableFullscreen={disableFullscreen} disableMinimize={disableMinimize} currentWindow={currentWindow} isFullscreen={isFullscreen} isFocused={isFocused} showOnHover={showOnHover}></Controls>
@@ -62,7 +62,7 @@ class MacOSTitleBar extends Component {
     } else {
       return (
         !isFullscreen &&
-        <div className="electron-macos-title-bar">
+        <div id="electron-macos-title-bar">
           <TitleBar currentWindow={currentWindow} isFocused={isFocused} showOnHover={showOnHover}></TitleBar>
           <Controls disableFullscreen={disableFullscreen} disableMinimize={disableMinimize} currentWindow={currentWindow} isFullscreen={isFullscreen} isFocused={isFocused} showOnHover={showOnHover}></Controls>
         </div>

@@ -1,4 +1,8 @@
-.macos-title-bar {
+#electron-macos-title-bar {
+  min-height: 22px;
+}
+
+#electron-macos-title-bar .macos-title-bar {
     user-select: none;
     -webkit-app-region: drag;
     cursor: default;
@@ -17,19 +21,19 @@
     position: fixed;
 }
 
-.macos-title-bar-focused {
+#electron-macos-title-bar .macos-title-bar-focused {
   background: -webkit-linear-gradient(top, rgb(235, 235, 235), rgb(224, 224, 224) 100%);
   border-bottom: 1px solid rgb(185, 185, 185);
   border-top: 1px solid rgb(244, 244, 244);
 }
 
-.macos-title-bar-transparent {
+#electron-macos-title-bar .macos-title-bar-transparent {
   background: transparent;
   border-bottom: 1px transparent;
   border-top: 1px transparent;
 }
 
-.macos-title-bar #title {
+#electron-macos-title-bar .macos-title-bar #title {
     font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
     font-size: 13px;
     letter-spacing: 0px;
@@ -43,11 +47,11 @@
     margin: inherit;
 }
 
-.macos-title-bar-focused #title {
+#electron-macos-title-bar .macos-title-bar-focused #title {
   color: rgb(57, 57, 57);
 }
 
-.electron-macos-title-bar .macos-tool-bar {
+#electron-macos-title-bar .macos-tool-bar {
     user-select: none;
     -webkit-app-region: drag;
     cursor: default;
@@ -67,22 +71,22 @@
     z-index: -1;
 }
 
-.electron-macos-title-bar .tool-bar-container-attatch {
+#electron-macos-title-bar .tool-bar-container-attatch {
     padding-left: 7px;
     padding-top: 22px;
 }
 
-.electron-macos-title-bar .tool-bar-container-inset {
+#electron-macos-title-bar .tool-bar-container-inset {
     padding-left: 66px;
 }
 
-.electron-macos-title-bar .macos-tool-bar-focused {
+#electron-macos-title-bar .macos-tool-bar-focused {
   background: -webkit-linear-gradient(top, rgb(235, 235, 235), rgb(224, 224, 224) 100%);
   border-bottom: 1px solid rgb(185, 185, 185);
   border-top: 1px solid rgb(244, 244, 244);
 }
 
-.macos-window-control {
+#electron-macos-title-bar .macos-window-control {
     user-select: none;
     -webkit-app-region: drag;
     cursor: default;
@@ -100,7 +104,7 @@
     position: fixed;
 }
 
-a.macos-control-btn {
+#electron-macos-title-bar a.macos-control-btn {
     /*display: none;*/
     user-select: none;
     -webkit-app-region: no-drag;
@@ -119,49 +123,49 @@ a.macos-control-btn {
     border-color: rgb(208, 208, 208);
 }
 
-a.macos-close-btn.macos-control-btn.macos-close-btn-focused {
+#electron-macos-title-bar a.macos-close-btn.macos-control-btn.macos-close-btn-focused {
     background-color: #ff5f57;
     border-color: #e2463f;
 }
 
-a.macos-minimize-btn.macos-control-btn.macos-minimize-btn-focused {
+#electron-macos-title-bar a.macos-minimize-btn.macos-control-btn.macos-minimize-btn-focused {
     background-color:  #ffbd2e;
     border-color: #e1a116;
 }
 
-a.macos-fullscreen-btn.macos-control-btn.macos-fullscreen-btn-focused {
+#electron-macos-title-bar a.macos-fullscreen-btn.macos-control-btn.macos-fullscreen-btn-focused {
     background-color: #28c940;
     border-color: #12ac28;
 }
 
-a.macos-close-btn.macos-control-btn.macos-close-btn-focused:active {
+#electron-macos-title-bar a.macos-close-btn.macos-control-btn.macos-close-btn-focused:active {
     background-color: #bf4943;
     border-color: #ad3934;
 }
 
-a.macos-minimize-btn.macos-control-btn.macos-minimize-btn-focused:active {
+#electron-macos-title-bar a.macos-minimize-btn.macos-control-btn.macos-minimize-btn-focused:active {
     background-color:  #bf9123;
     border-color: #ad7d15;
 }
 
-a.macos-fullscreen-btn.macos-control-btn.macos-fullscreen-btn-focused:active {
+#electron-macos-title-bar a.macos-fullscreen-btn.macos-control-btn.macos-fullscreen-btn-focused:active {
     background-color: #1f9a31;
     border-color: #128622;
 }
 
 
-.macos-btn-icon {
+#electron-macos-title-bar .macos-btn-icon {
     display: none;
     width: 10px;
     height: 10px;
 }
 
-.electron-macos-title-bar .show-on-hover {
+#electron-macos-title-bar.show-on-hover {
   display: none;
 }
-.macos-window-control:hover .macos-btn-icon {
+#electron-macos-title-bar .macos-window-control:hover .macos-btn-icon {
     display: inline;
 }
-.macos-window-control:hover .macos-control-btn {
+#electron-macos-title-bar .macos-window-control:hover .macos-control-btn {
     display: inline;
 }
