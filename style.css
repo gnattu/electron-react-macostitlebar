@@ -23,6 +23,12 @@
   border-top: 1px solid rgb(244, 244, 244);
 }
 
+.macos-title-bar-transparent {
+  background: transparent;
+  border-bottom: 1px transparent;
+  border-top: 1px transparent;
+}
+
 .macos-title-bar #title {
     font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
     font-size: 13px;
@@ -38,7 +44,42 @@
 }
 
 .macos-title-bar-focused #title {
-  color: rgb(55, 55, 55);
+  color: rgb(57, 57, 57);
+}
+
+.electron-macos-title-bar .macos-tool-bar {
+    user-select: none;
+    -webkit-app-region: drag;
+    cursor: default;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    height: fit-content;
+    background: rgb(246, 246, 246);
+    border-bottom: 1px solid rgb(219, 219, 219);
+    border-top: 1px solid rgb(250, 250, 250);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding-right: 3px;
+    position: fixed;
+    z-index: -1;
+}
+
+.electron-macos-title-bar .tool-bar-container-attatch {
+    padding-left: 7px;
+    padding-top: 22px;
+}
+
+.electron-macos-title-bar .tool-bar-container-inset {
+    padding-left: 66px;
+}
+
+.electron-macos-title-bar .macos-tool-bar-focused {
+  background: -webkit-linear-gradient(top, rgb(235, 235, 235), rgb(224, 224, 224) 100%);
+  border-bottom: 1px solid rgb(185, 185, 185);
+  border-top: 1px solid rgb(244, 244, 244);
 }
 
 .macos-window-control {
@@ -50,7 +91,7 @@
     display: flex;
     align-items: center;
     min-height: 22px;
-    min-width: 60px;
+    min-width: 66px;
     width: fit-content;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;

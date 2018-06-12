@@ -5,6 +5,7 @@ export class TitleBar extends Component {
   static propTypes = {
     //showOnHover: PropTypes.bool,
     isFocused: PropTypes.bool,
+    transparent: PropTypes.bool,
   }
   state = {
     title: document.title || 'Electron',
@@ -14,12 +15,13 @@ export class TitleBar extends Component {
   }
 
   render() {
-    const { isFocused } = this.props
+    const { isFocused, transparent } = this.props
     const { title } = this.state
     //const classOnHover = showOnHover ? 'show-on-hover' : ''
     const classOnFocus = isFocused ? 'macos-title-bar-focused' : ''
+    const classTransparent = transparent ? 'macos-title-bar-transparent' : ''
     return (
-      <div className={`${classOnFocus} macos-title-bar`}>
+      <div className={`${classTransparent} ${classOnFocus} macos-title-bar`}>
         <p id="title">{title}</p>
       </div>
     )

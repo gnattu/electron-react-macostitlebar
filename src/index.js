@@ -4,9 +4,13 @@ import { remote } from 'electron'
 
 import { Controls } from './controls/'
 import { TitleBar } from './titlebar/'
+import { ToolBar } from './toolbar/'
 
 class MacOSTitleBar extends Component {
   static propTypes = {
+    toolBarComponent: PropTypes.element,
+    toolBarInset: PropTypes.bool,
+    toolBarProps: PropTypes.object,
     showOnHover: PropTypes.bool,
     controlOnly: PropTypes.bool,
     disableMinimize: PropTypes.bool,
@@ -30,12 +34,29 @@ class MacOSTitleBar extends Component {
   }
 
   render() {
-    const { disableFullscreen, disableMinimize, currentWindow, controlOnly, showOnHover } = this.props
+    const { toolBarComponent, toolBarInset, disableFullscreen, disableMinimize, currentWindow, controlOnly, showOnHover, toolBarProps } = this.props
     const { isFullscreen, isFocused } = this.state
     if (controlOnly) {
       return (
         <div className="electron-macos-title-bar">
           <Controls disableFullscreen={disableFullscreen} disableMinimize={disableMinimize} currentWindow={currentWindow} isFullscreen={isFullscreen} isFocused={isFocused} showOnHover={showOnHover}></Controls>
+        </div>
+      )
+    } else if (toolBarComponent){
+      return (
+        <div className="electron-macos-title-bar">
+          {toolBarInset ? (
+            <ToolBar toolBarProps={toolBarProps} isFocused={isFocused}>
+              <Controls disableFullscreen={disableFullscreen} disableMinimize={disableMinimize} currentWindow={currentWindow} isFullscreen={isFullscreen} isFocused={isFocused} showOnHover={showOnHover}></Controls>
+              {toolBarComponent}
+            </ToolBar>
+          ):(
+            <React.Fragment>
+              <TitleBar transparent={true} currentWindow={currentWindow} isFocused={isFocused} showOnHover={showOnHover}></TitleBar>
+              <Controls disableFullscreen={disableFullscreen} disableMinimize={disableMinimize} currentWindow={currentWindow} isFullscreen={isFullscreen} isFocused={isFocused} showOnHover={showOnHover}></Controls>
+              <ToolBar toolBarProps={toolBarProps} isFocused={isFocused}>{toolBarComponent}</ToolBar>
+            </React.Fragment>
+          )}
         </div>
       )
     } else {
